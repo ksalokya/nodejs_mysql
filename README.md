@@ -102,8 +102,6 @@ app.patch('/employees', (req, res) => {
     query += " where EmployeeID = ?";
     values.push(emp.id);
 
-    console.log(query)
-
     mysqlConnection.query(query, values, (err, rows, fields) => {
         if (!err)
             res.send('Updated successfully');
